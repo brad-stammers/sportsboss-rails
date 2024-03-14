@@ -13,11 +13,13 @@
   <body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
     <div class="ui fixed brown inverted menu">
       <div class="ui container">
-        <a href="#" class="header item">SportsBoss</a>
-          <%= render partial: "navigation" %>
-        <div class="ui right floated item">
-          <%- link_to "Logout", "", method: :post, class: 'ui white inverted basic small button' %>
-        </div>
+        <a href="/" class="header item">SportsBoss</a>
+          <% if user_signed_in? %>
+            <%= render partial: "home/navigation" %>
+            <div class="ui right floated item">
+              <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "ui white inverted small button") %>
+            </div>
+          <% end %>
       </div>
     </div>
     <div class="ui main container">
