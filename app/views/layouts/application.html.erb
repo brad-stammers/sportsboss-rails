@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SportsbossRails</title>
+    <title>SportsBoss - Rails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
+    <div class="ui fixed brown inverted menu">
+      <div class="ui container">
+        <a href="#" class="header item">SportsBoss</a>
+          <%= render partial: "navigation" %>
+        <div class="ui right floated item">
+          <%- link_to "Logout", "", method: :post, class: 'ui white inverted basic small button' %>
+        </div>
+      </div>
+    </div>
+    <div class="ui main container">
+      <%= yield %>
+    </div>
   </body>
 </html>
