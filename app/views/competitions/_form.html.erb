@@ -1,0 +1,49 @@
+<%= form_with(model: competition, class: "ui form" ) do |form| %>
+  <% if competition.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(competition.errors.count, "error") %> prohibited this competition from being saved:</h2>
+
+      <ul>
+        <% competition.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="eight wide field">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="eight wide field">
+    <%= form.label :sport, style: "display: block" %>
+    <%= form.text_field :sport %>
+  </div>
+
+  <div class="eight wide field">
+    <%= form.label :start_date, style: "display: block" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div class="eight wide field">
+    <%= form.label :end_date, style: "display: block" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div class="eight wide field">
+    <%= form.label :venue, style: "display: block" %>
+    <%= form.text_field :venue %>
+  </div>
+
+  <div class="eight wide field">
+    <%= form.label :manager, style: "display: block" %>
+    <%= form.text_field :manager %>
+  </div>
+
+  <div>
+    <br />
+    <%= form.submit class: "ui green small button" %>
+    <%= link_to "Cancel", competitions_path, class: "ui red small button" %>
+  </div>
+<% end %>

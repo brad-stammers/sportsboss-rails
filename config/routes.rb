@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :competitions
   devise_for :users
   root 'home#index'
   get 'home/welcome'

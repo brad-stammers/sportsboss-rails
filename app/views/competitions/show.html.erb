@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @competition %>
+
+<div>
+  <br />
+  <%= link_to "Edit this competition", edit_competition_path(@competition), class: "ui blue small button" %>
+  <%= link_to "Back to competitions", competitions_path, class: "ui blue small button" %>
+</div>
